@@ -1,0 +1,24 @@
+//create a simple nodejs express server
+var express = require('express');
+var app = express();
+//create a simple router
+var router = express.Router();
+//create a simple route
+var route = router.route('/');
+//create a simple handler
+var handler = function(req, res) {
+    res.send('Hello World');
+    };
+    //add the handler to the route
+    route.get(handler);
+    //route the request to the handler
+    router.get('/', handler);
+    //route the request to the handler
+    router.get('/:id', handler);
+    //route the request to the handler
+    router.get('/:id/:name', handler);
+    //route the request to the handler
+    router.get('/:id/:name/:age', handler);
+    //route the request to the handler
+    router.get('/:id/:name/:age/:gender', handler);
+    
